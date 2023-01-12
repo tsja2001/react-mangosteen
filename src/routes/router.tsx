@@ -1,20 +1,30 @@
-import { createBrowserRouter } from 'react-router-dom'
-import { MainLayout } from '../layouts/MainLayout'
+import { createBrowserRouter, Outlet } from 'react-router-dom'
+import { Root } from '../components/Root'
+import { WelcomeLayout } from '../layouts/WelcomeLayout'
 import Home from '../pages/home'
 import NotFountPage from '../pages/NotFountPage'
-import { welcomeRoutes } from './welcomeRoutes'
+import { Welcome1 } from '../pages/Welcome1'
+import { Welcome2 } from '../pages/Welcome2'
+import { Welcome3 } from '../pages/Welcome3'
+import { Welcome4 } from '../pages/Welcome4'
 
 export const router = createBrowserRouter([
   {
-    path: '/home',
-    element: <Home/>
+    path: '/',
+    element: <Root/>
   },
   {
-    path: '/',
-    element: <MainLayout />,
-    errorElement: <NotFountPage />,
+    path: '/welcome',
+    element: <WelcomeLayout />,
     children: [
-      welcomeRoutes
-    ],
+      { path: '1', element: <Welcome1 /> },
+      { path: '2', element: <Welcome2 /> },
+      { path: '3', element: <Welcome3 /> },
+      { path: '4', element: <Welcome4 /> },
+    ]
+  },
+  {
+    path: '/home',
+    element: <Home/>
   },
 ])

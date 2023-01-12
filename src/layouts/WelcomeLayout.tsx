@@ -13,7 +13,7 @@ export const WelcomeLayout: React.FC = () => {
     '/welcome/1': '/welcome/2',
     '/welcome/2': '/welcome/3',
     '/welcome/3': '/welcome/4',
-    '/welcome/4': '/welcome/xxx',
+    '/welcome/4': '/home',
   }
   const isAnimate = useRef(false)
 
