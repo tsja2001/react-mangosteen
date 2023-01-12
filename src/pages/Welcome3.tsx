@@ -5,7 +5,7 @@ export const Welcome3: React.FC = () => {
     <div text-center>
       <img src={p} w-130px h-108px />
       <h2 text-32px mt-48px >
-        数据可视化 <br />
+        数据可视化 <br />∏
         收支一目了然
       </h2>
     </div>
