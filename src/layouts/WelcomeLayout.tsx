@@ -14,7 +14,7 @@ export const WelcomeLayout: React.FC = () => {
 		'/welcome/3': '/welcome/4',
 		'/welcome/4': '/welcome/xxx',
 	}
-	const [extraStyle, setExtraStyle] = useState({ position: 'relative' })
+	const [extraStyle, setExtraStyle] = useState<Record<string, 'relative' | 'absolute'>>({ position: 'relative' })
 
 	map.current[location.pathname] = outlet
 	const transitions = useTransition(location.pathname, {
@@ -39,7 +39,7 @@ export const WelcomeLayout: React.FC = () => {
 				<main grow-1 shrink-1 relative >
 					{transitions((style, pathname) =>
 						// <animated.div  style={{ ...style, ...extraStyle }} w="100%" h="100%" p-16px justify-center items-center key={pathname}  >
-						<animated.div absolute style={{ ...style, ...extraStyle }} w="100%" h="100%" p-16px justify-center items-center key={pathname}  >
+						<animated.div style={{ ...style, ...extraStyle }} w="100%" h="100%" p-16px justify-center items-center key={pathname}  >
 							<div bg-white w="100%" h="100%" flex justify-center items-center rounded-8px>
 								{map.current[pathname]}
 							</div>
